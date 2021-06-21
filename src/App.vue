@@ -1,18 +1,31 @@
-<template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link>
-    </div>
-    <router-view/>
-  </div>
+<template lang="pug">
+  div(id="app")
+    NavBar
+    b-container.app-content(fluid)
+      router-view
+    notifications(position="bottom left")
 </template>
+
+<script>
+import NavBar from '@/components/NavBar'
+export default {
+  name: 'Home',
+  components: {
+    NavBar
+  }
+}
+</script>
 
 <style lang="stylus">
 #app
   font-family Avenir, Helvetica, Arial, sans-serif
-  -webkit-font-smoothing antialiased
-  -moz-osx-font-smoothing grayscale
-  text-align center
-  color #2c3e50
-  margin-top 60px
+  display flex
+  flex-direction column
+  width 100vw
+  height 100vh
+.app-content
+  display flex
+  flex-direction column
+  flex 1 1 auto
+  padding-top 70px
 </style>

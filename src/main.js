@@ -5,11 +5,15 @@ import './plugins/bootstrap-vue'
 import App from './App.vue'
 import router from './router'
 import store from './store'
-
+import initPlugins from './plugins'
+import './assets/styles/default.styl'
+import 'vue-multiselect/dist/vue-multiselect.min.css'
 Vue.config.productionTip = false
 
-new Vue({
+const app = {
   router,
   store,
   render: h => h(App)
-}).$mount('#app')
+}
+initPlugins(app)
+new Vue(app).$mount('#app')
