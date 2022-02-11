@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 import order from './order.module'
 import delivery from './delivery.module'
+import auth from './auth.module'
 Vue.use(Vuex)
 
 export default new Vuex.Store({
@@ -51,6 +52,7 @@ export default new Vuex.Store({
   },
   modules: {
     order,
-    delivery
+    delivery,
+    auth
   }
 })

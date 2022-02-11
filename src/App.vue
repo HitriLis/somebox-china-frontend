@@ -1,21 +1,13 @@
 <template lang="pug">
   div(id="app")
-    NavBar
-    b-container.app-content(fluid)
-      router-view
-    notifications(position="bottom left")
+    router-view
 </template>
 
 <script>
-import NavBar from '@/components/NavBar'
 export default {
-  name: 'Home',
-  components: {
-    NavBar
-  }
+  name: 'App'
 }
 </script>
-
 <style lang="stylus">
 #app
   font-family Avenir, Helvetica, Arial, sans-serif

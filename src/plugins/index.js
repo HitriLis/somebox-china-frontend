@@ -2,7 +2,6 @@ import sendRequest from './sendRequest'
 import notification from './notification'
 import bootstrap from './bootstrap-vue'
 import moment from './moment'
-
 import Vue from 'vue'
 export default function (app) {
   const inject = (name, plugin) => {
@@ -23,5 +22,6 @@ export default function (app) {
   sendRequest(app, inject)
   notification()
   bootstrap()
+  // vuetyfi()
   moment(app, inject)
 }

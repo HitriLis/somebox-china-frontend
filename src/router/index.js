@@ -5,29 +5,32 @@ Vue.use(VueRouter)
 
 const routes = [
   {
-    path: '/list',
-    name: 'order-list',
-    component: () => import('../views/Home')
+    path: '/',
+    redirect: '/list',
+    component: () => import('../views/layout/Layout'),
+    children: [
+      {
+        path: '/list',
+        name: 'order-list',
+        component: () => import('../views/Home')
+      }
+    ]
   },
   {
-    path: '/delivery',
-    name: 'delivery',
-    component: () => import('../views/Delivery')
-  },
-  {
-    path: '/delivery-list',
-    name: 'delivery-list',
-    component: () => import('../views/Delivery/list')
-  },
-  {
-    path: '/create-order',
-    name: 'create-order',
-    component: () => import('../views/CreateOrder')
-  },
-  {
-    path: '/order/:id',
-    name: 'order',
-    component: () => import('../views/Order')
+    path: '/',
+    component: () => import('@/views/Auth'),
+    children: [
+      {
+        name: 'login',
+        path: '/login',
+        component: () => import('@/views/Auth/Login')
+      },
+      {
+        name: 'register',
+        path: '/register',
+        component: () => import('@/views/Auth/Register')
+      }
+    ]
   }
 ]
 
